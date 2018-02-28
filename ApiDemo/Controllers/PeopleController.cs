@@ -28,9 +28,9 @@ namespace ApiDemo.Controllers
 
         // GET: api/People/5
         [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
+        public Person Get(int id)
         {
-            return "value";
+            return _peopleRepository.GetPersonById(id);
         }
         
         // POST: api/People

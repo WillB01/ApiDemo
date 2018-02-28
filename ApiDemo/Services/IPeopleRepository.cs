@@ -9,5 +9,6 @@ namespace ApiDemo.Services
     public interface IPeopleRepository
     {
         IEnumerable<Person> People { get; }
+        Person GetPersonById(int id);
     }
 }

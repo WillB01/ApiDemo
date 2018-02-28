@@ -16,8 +16,13 @@ namespace ApiDemo.Data
         {
             new Person(){Id = 1, FirstName = "Joe", LastName = "Awsome"},
             new Person(){Id = 2, FirstName = "Lisa", LastName = "Kewl"},
+            new Person(){Id = 3, FirstName = "Bengt", LastName = "Wow"},
         };
 
-       
+        public Person GetPersonById(int id)
+        {
+            return People.FirstOrDefault(p => p.Id == id);
+        }
+        
     }
 }
