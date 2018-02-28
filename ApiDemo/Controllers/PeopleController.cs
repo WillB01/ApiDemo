@@ -32,6 +32,13 @@ namespace ApiDemo.Controllers
         {
             return _peopleRepository.GetPersonById(id);
         }
+
+        [Route("GetFirstNames")]
+        [HttpGet]
+        public List<string> GetFirstNames()
+        {
+            return _peopleRepository.GetPersonFirstName();
+        }
         
         // POST: api/People
         [HttpPost]

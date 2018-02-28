@@ -11,5 +11,6 @@ namespace ApiDemo.Services
         List<Person> People { get; }
         Person GetPersonById(int id);
         void Add(Person person);
+        List<string> GetPersonFirstName();
     }
 }

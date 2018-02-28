@@ -31,6 +31,16 @@ namespace ApiDemo.Data
         {
             return People.FirstOrDefault(p => p.Id == id);
         }
-        
+
+        public List<string> GetPersonFirstName()
+        {
+            List<string> firstNames = new List<string>();
+            foreach (var item in People)
+            {
+                firstNames.Add(item.FirstName);
+            }
+            return firstNames;
+           
+        }
     }
 }
