@@ -33,9 +33,9 @@ namespace ApiDemo.Controllers
             return _peopleRepository.GetPersonById(id);
         }
 
-        [Route("GetFirstNames")]
-        [HttpGet]
-        public List<string> GetFirstNames()
+        [Route("GetFirstNames/{userId?}/{age?}")]
+        [HttpGet()]
+        public List<string> GetFirstNames(int? userId, int? age)
         {
             return _peopleRepository.GetPersonFirstName();
         }
