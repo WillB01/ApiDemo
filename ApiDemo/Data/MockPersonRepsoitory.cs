@@ -12,12 +12,20 @@ namespace ApiDemo.Data
 
 
 
-        public IEnumerable<Person> People => new List<Person>()
+        public List<Person> People => new List<Person>()
         {
             new Person(){Id = 1, FirstName = "Joe", LastName = "Awsome"},
             new Person(){Id = 2, FirstName = "Lisa", LastName = "Kewl"},
             new Person(){Id = 3, FirstName = "Bengt", LastName = "Wow"},
         };
+
+
+        public void Add(Person person)
+        {
+
+            People.Add(person);
+            
+        }
 
         public Person GetPersonById(int id)
         {

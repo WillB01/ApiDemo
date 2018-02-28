@@ -35,8 +35,9 @@ namespace ApiDemo.Controllers
         
         // POST: api/People
         [HttpPost]
-        public void Post([FromBody]string value)
+        public void Post([FromBody]Person value)
         {
+            _peopleRepository.Add(value);
         }
         
         
