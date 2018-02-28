@@ -4,46 +4,43 @@ using System.Linq;
 using System.Threading.Tasks;
 using ApiDemo.Models;
 using ApiDemo.Services;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ApiDemo.Controllers
 {
-    [Route("api/[controller]")]
-    public class ValuesController : Controller
+    [Produces("application/json")]
+    [Route("api/People")]
+    public class PeopleController : Controller
     {
-        private IPeopleRepository _peopleRepositroy;
+        private readonly IPeopleRepository _peopleRepository;
 
-        public ValuesController(IPeopleRepository peopleRepositroy)
+        public PeopleController(IPeopleRepository peopleRepository)
         {
-            _peopleRepositroy = peopleRepositroy;
+            _peopleRepository = peopleRepository;
         }
-        // GET api/values
+        // GET: api/People
         [HttpGet]
         public IEnumerable<Person> Get()
         {
-            return _peopleRepositroy.People;
+            return _peopleRepository.People;
         }
 
-        // GET api/values/5
-        [HttpGet("{id}")]
+        // GET: api/People/5
+        [HttpGet("{id}", Name = "Get")]
         public string Get(int id)
         {
             return "value";
         }
-
-        // POST api/values
+        
+        // POST: api/People
         [HttpPost]
         public void Post([FromBody]string value)
         {
         }
-
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
-        {
-        }
-
-        // DELETE api/values/5
+        
+        
+        // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
